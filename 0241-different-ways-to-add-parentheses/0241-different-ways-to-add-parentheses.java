@@ -17,7 +17,6 @@ public class Solution {
                 List<Integer> leftResults = diffWaysToCompute(leftPart);
                 List<Integer> rightResults = diffWaysToCompute(rightPart);
 
-                // Combine results based on the current operator
                 for (int l : leftResults) {
                     for (int r : rightResults) {
                         if (c == '+') res.add(l + r);
@@ -28,12 +27,12 @@ public class Solution {
             }
         }
 
-        // Base case: If no operators were found, the expression is a single number
+       
         if (res.isEmpty()) {
             res.add(Integer.parseInt(expression));
         }
 
-        // Store in memo before returning
+        
         memo.put(expression, res);
         return res;
     }
